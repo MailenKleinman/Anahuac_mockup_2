@@ -69,33 +69,81 @@
 
 })(jQuery);
 
-var $firstButton = $(".first"),
-  $secondButton = $(".second"),
-  $input = $("input"),
-  $name = $(".name"),
-  $more = $(".more"),
-  $yourname = $(".yourname"),
-  $reset = $(".reset"),
-  $ctr = $(".container");
+jQuery(document).ready(function ($) {
 
-$firstButton.on("click", function(e){
-  $(this).text("Saving...").delay(900).queue(function(){
-    $ctr.addClass("center slider-two-active").removeClass("full slider-one-active");
-  });
-  e.preventDefault();
+	$('#checkbox').change(function(){
+	  setInterval(function () {
+		  moveRight();
+	  }, 3000);
+	});
+	
+	  var slideCount = $('#slider ul li').length;
+	  var slideWidth = $('#slider ul li').width();
+	  var slideHeight = $('#slider ul li').height();
+	  var sliderUlWidth = slideCount * slideWidth;
+	  
+	  $('#slider').css({ width: slideWidth, height: slideHeight });
+	  
+	  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	  
+	  $('#slider ul li:last-child').prependTo('#slider ul');
+  
+	  function moveLeft() {
+		  $('#slider ul').animate({
+			  left: + slideWidth
+		  }, 200, function () {
+			  $('#slider ul li:last-child').prependTo('#slider ul');
+			  $('#slider ul').css('left', '');
+		  });
+	  };
+  
+	  function moveRight() {
+		  $('#slider ul').animate({
+			  left: - slideWidth
+		  }, 200, function () {
+			  $('#slider ul li:first-child').appendTo('#slider ul');
+			  $('#slider ul').css('left', '');
+		  });
+	  };
+  
+	  $('a.control_prev').click(function () {
+		  moveLeft();
+	  });
+  
+	  $('a.control_next').click(function () {
+		  moveRight();
+	  });
+  
+  });   
+
+  $(function(){
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables
+		var link = this.el.find('.link');
+		// Eventos
+		link.on('click', {el: this.el, multiple: this.multiple},this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		// Desencadena evento de apertura en los elementos siguientes a la clase link = ul.submenu
+		$next.slideToggle();
+		// Agregar clase open a elemento padre del elemento con clase link = li
+		$this.parent().toggleClass('open');
+		
+		//Parametro inicial que permite ver 1 solo submenu abierto 
+		if(!e.data.multiple){
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		}
+    
+	}
+	// Elegir submenus multiples (true) submenus uno a la vez (false)
+	var accordion = new Accordion($('#accordion'), false);
 });
 
-$secondButton.on("click", function(e){
-  $(this).text("Saving...").delay(900).queue(function(){
-    $ctr.addClass("full slider-three-active").removeClass("center slider-two-active slider-one-active");
-    $name = $name.val();
-    if($name == "") {
-      $yourname.html("Anonymous!");
-    }
-    else { $yourname.html($name+""); }
-  });
-  e.preventDefault();
-});
-
-// copy
-balapaCop("Step by Step Form", "#999");
