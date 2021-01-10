@@ -30,83 +30,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
    
 </head>
-<body style="background-image: url(image/bo-01.jpg);">
-    
-    <div class="row">
-        <div class="column" >
-            <div class="container slider-one-active p-b-32 p-t-100 " style="background-color: rgba(255, 255, 255, 0.918);height: 100%;width: 520px;">
-                <h3 style="font-family: Montserrat;font-weight: 600;color: #db7d3f;" class="text-center p-b-47">Create your avatar</h3>
-            <div class="steps">
-                <div class="step step-one">
-                <div class="liner"></div>
-                <span style="font-family: Montserrat;">Name</span>
-                </div>
-                <div class="step step-two">
-                <div class="liner"></div>
-                <span style="font-family: Montserrat;">Skintone</span>
-                </div>
-                <div class="step step-three">
-                <div class="liner"></div>
-                <span style="font-family: Montserrat;">Finish</span>
-                </div>
-                
-            </div>
-                <div class="line">
-                    <div class="dot-move"></div>
-                    <div class="dot zero"></div>
-                    <div class="dot center"></div>
-                    <div class="dot full"></div>
-                </div>
-                <div class="slider-ctr">
-                    <div class="slider">
-                    <form class="slider-form slider-one">
-                        <label class="input" style="width: 90%;">
-                        <input  style="font-family: Montserrat;"type="text" class="name" placeholder="What's your name?">
-                        </label>
-                        <button  style="font-family: Montserrat;"class="first next">Next Step</button>
-                    </form>
-                    <form class="slider-form slider-two">
-                        <div class="label-ctr" style="margin-top:25px">
-                        <label class="radio">
-                            <input type="radio" value="happy" name="condition">
-                            <div class="emot happy" style="background-color:#e0cab5;">
-                            <div class="mouth smile"></div>
-                            </div>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" value="happy" name="condition">
-                            <div class="emot happy" style="background-color: #c7a17d;">
-                            <div class="mouth smile"></div>
-                            </div>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" value="happy" name="condition">
-                            <div class="emot happy" style="background-color: #9b7653">
-                            <div class="mouth smile"></div>
-                            </div>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" value="happy" name="condition">
-                            <div class="emot happy" style="background-color:#886443;">
-                            <div class="mouth smile"></div>
-                            </div>
-                        </label>
-                        </div>
-                        <button style="font-family: Montserrat;" class="second next">Next Step</button>
-                    </form>
-                    <div class="slider-form slider-three">
-                        <h2 style="font-family: Montserrat;">Your avatar is ready<h2 class="yourname"></h2></h2>
-                        
-                        <a class="reset" href="home.html" target="_blank" style="font-family: Montserrat;">JOIN ROOM</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <img class="fadeInLeft" style="width: 300px;position: absolute; margin-left: 740px;margin-top: 60px; cursor: pointer;" src="image/avatar.png" alt="">
-        </div>
-    </div>
+<body class="backgroundcolor" style="margin-left: 15%; margin-top: 5%;">
+
+	<div class="row">
+		<div class="column">
+			<div class="animated fadeInDown">
+				<h3 style="font-family: Montserrat;font-weight: 600;color: #db7d3f;" class="text-center">Create your avatar</h3>   
+			</div>
+			<div class="animated fadeInDown">
+				<h5 style="color: grey;" class="montserrat text-center ">User name</h5> </span>   
+			</div>
+			<div class="animated fadeInDown">
+				<img class="fadeInDown zoom" style="width: 250px;cursor: pointer;margin-top: 20px;" src="images/avatar.png" alt="">
+			</div>		
+		</div>
+
+		<div class="column animated fadeIn" style="margin-left: 15%;">
+			
+		<h2 style="font-family: Montserrat;color: white;"></h2>
+		<div id="slider">
+		<a href="#" class="control_next">></a>
+		<a href="#" class="control_prev"><</a>
+		<ul>
+			<li>
+				<img style="width: 100%; cursor: pointer;" src="images/hairstyle.png" alt="">
+			</li>
+			<li>
+				<img style="width: 100%; cursor: pointer;" src="images/skintone.png" alt="">
+			</li>
+			<li>
+				<img style="width: 100%; cursor: pointer;" src="images/clothes.png" alt="">
+			</li>
+			<li>
+				<img style="width: 100%; cursor: pointer;" src="images/glasses.png" alt="">
+			</li>
+		</ul>  
+		</div>
+
+		<button class=" zoom login100-form-btn montserrat animated fadeIn" style="background-color:#db7d3f; margin-top: 8%;" >
+			<a style="color: white;" href="home.html">JOIN ROOM</a>
+			
+		</button>
+	 </div>
+	</div>
+	
+	
 	
 	
 <!--===============================================================================================-->
